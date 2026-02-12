@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer
-      className="border-top shadow-lg"
+      className="border-top shadow-lg stiky-bottom"
       style={{
         backgroundColor: "#fff",
         padding: "2rem 0",
