@@ -44,7 +44,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
         <div className="col-6 d-flex flex-column align-items-start ps-5">
           <a href="#" className="text-white text-decoration-none mb-3">
             <b className="fs-5">Track Tickets</b>

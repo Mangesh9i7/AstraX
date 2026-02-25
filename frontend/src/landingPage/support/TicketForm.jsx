@@ -4,7 +4,6 @@ export default function CreateTicket() {
       <div className="row p-5 mt-5 mb-5">
         <h1 className="fs-2">To create a ticket, select a relevant topic</h1>
 
-        {/* Account Opening */}
         <div className="col-4 p-5 mt-2 mb-2">
           <h4>
             <i className="fa fa-plus-circle"></i> Account Opening
@@ -30,7 +29,6 @@ export default function CreateTicket() {
           </a>
         </div>
 
-        {/* Your AstraX Account */}
         <div className="col-4 p-5 mt-2 mb-2">
           <h4>
             <i className="fa-solid fa-user"></i> Your AstraX Account
@@ -56,7 +54,6 @@ export default function CreateTicket() {
           </a>
         </div>
 
-        {/* Trading & Platforms */}
         <div className="col-4 p-5 mt-2 mb-2">
           <h4>
             <i className="fa-solid fa-chart-column"></i> Trading & Platforms
@@ -79,7 +76,6 @@ export default function CreateTicket() {
           </a>
         </div>
 
-        {/* Funds */}
         <div className="col-4 p-5 mt-2 mb-2">
           <h4>
             <i className="fa-solid fa-wallet"></i> Funds
@@ -102,7 +98,6 @@ export default function CreateTicket() {
           </a>
         </div>
 
-        {/* Console */}
         <div className="col-4 p-5 mt-2 mb-2">
           <h4>
             <i className="fa-solid fa-circle-notch"></i> Console
@@ -125,7 +120,6 @@ export default function CreateTicket() {
           </a>
         </div>
 
-        {/* Coin */}
         <div className="col-4 p-5 mt-2 mb-2">
           <h4>
             <i className="fa-regular fa-circle"></i> Coin (Mutual Funds)
