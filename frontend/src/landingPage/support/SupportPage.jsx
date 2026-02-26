@@ -1,5 +1,5 @@
 import Hero from "./Hero";
-import CreateTicket from "./CreateTicket";
+import CreateTicket from "./TicketForm";
 
 export default function ProductPage() {
   return (

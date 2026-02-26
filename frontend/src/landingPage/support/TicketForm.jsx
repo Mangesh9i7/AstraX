@@ -1,4 +1,4 @@
-export default function CreateTicket() {
+export default function TicketForm() {
   return (
     <div className="container">
       <div className="row p-5 mt-5 mb-5">
