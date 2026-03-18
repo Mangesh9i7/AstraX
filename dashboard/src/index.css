@@ -249,6 +249,10 @@ code {
   cursor: pointer;
 }
 
+.menu-padding{
+  padding-top: 25px;
+}
+
 .menu-container {
   flex-basis: 68%;
   height: 100%;
@@ -376,6 +380,10 @@ hr {
 .btn:hover {
   background: rgb(110, 110, 253);
 }
+
+/* .username{
+  padding-top: 15px;
+} */
 
 .title {
   font-size: 1.3rem;
