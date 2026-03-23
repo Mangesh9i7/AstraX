@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const positionsSchema = new Schema({
+const positionSchema = new mongoose.Schema({
   product: String,
   name: String,
   qty: Number,
@@ -9,7 +9,7 @@ const positionsSchema = new Schema({
   price: Number,
   net: String,
   day: String,
-  isLoss: true,
+  isLoss: Boolean,
 });
 
-module.exports = mongoose.model("Review", positionsSchema);
+module.exports = mongoose.model("Position", positionSchema);

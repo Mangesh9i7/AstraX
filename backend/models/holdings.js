@@ -10,4 +10,4 @@ const holdingSchema = new Schema({
   day: String,
 });
 
-module.exports = mongoose.model("Review", holdingSchema);
+module.exports = mongoose.model("Holdings", holdingSchema);
