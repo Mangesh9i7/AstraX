@@ -1,6 +1,32 @@
-import { holdings } from "../data/data";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { VerticalGraph } from "./VerticalGraph";
 
 const Holdings = () => {
+  const [holdings, setHoldings] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:4040/holdings")
+      .then((res) => {
+        setHoldings(res.data);
+      })
+      .catch((err) => console.error("Error fetching holdings:", err));
+  }, []);
+
+  // Calculate totals dynamically
+  const totalInvestment = holdings.reduce(
+    (acc, stock) => acc + stock.avg * stock.qty,
+    0,
+  );
+  const currentValue = holdings.reduce(
+    (acc, stock) => acc + stock.price * stock.qty,
+    0,
+  );
+  const totalPnl = currentValue - totalInvestment;
+  const pnlPercent =
+    totalInvestment > 0 ? (totalPnl / totalInvestment) * 100 : 0;
+
   return (
     <>
       <h3 className="title">Holdings ({holdings.length})</h3>
@@ -44,8 +70,7 @@ const Holdings = () => {
 
               return (
                 <tr key={index}>
-                  <td className="">{stock.name}</td>
-                  {/* Added text-end to match headers */}
+                  <td>{stock.name}</td>
                   <td className="text-end">{stock.qty}</td>
                   <td className="text-end">{stock.avg.toFixed(2)}</td>
                   <td className="text-end">{stock.price.toFixed(2)}</td>
@@ -62,21 +87,20 @@ const Holdings = () => {
         </table>
       </div>
 
+      {/* Dynamic totals */}
       <div className="row">
         <div className="col">
-          <h5>
-            29,875.<span>55</span>{" "}
-          </h5>
+          <h5>{totalInvestment.toFixed(2)}</h5>
           <p>Total investment</p>
         </div>
         <div className="col">
-          <h5>
-            31,428.<span>95</span>{" "}
-          </h5>
+          <h5>{currentValue.toFixed(2)}</h5>
           <p>Current value</p>
         </div>
         <div className="col">
-          <h5>1,553.40 (+5.20%)</h5>
+          <h5>
+            {totalPnl.toFixed(2)} ({pnlPercent.toFixed(2)}%)
+          </h5>
           <p>P&L</p>
         </div>
       </div>

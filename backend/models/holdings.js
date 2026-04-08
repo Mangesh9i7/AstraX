@@ -5,9 +5,10 @@ const holdingSchema = new Schema({
   name: String,
   qty: Number,
   avg: Number,
-  price: 541.15,
+  price: Number,
   net: String,
   day: String,
+  isLoss: Boolean,
 });
 
 module.exports = mongoose.model("Holdings", holdingSchema);
